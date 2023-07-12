@@ -3,8 +3,11 @@
 Este repositorio tiene como objetivo ...
 
 ## Contenidos
+- spaghetti
+- layered
+- onion
 - hexagonal
-- ...
+- clean
 
 ## Requisitos
 
