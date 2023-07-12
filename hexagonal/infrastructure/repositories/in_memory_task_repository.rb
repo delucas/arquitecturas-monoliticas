@@ -1,6 +1,6 @@
 require_relative '../../domain/ports/task_repository_port'
 
-class MemoryRepository < TaskRepositoryPort
+class InMemoryTaskRepository < TaskRepositoryPort
   def initialize
     @tasks = []
     @next_id = 1
@@ -21,6 +21,6 @@ class MemoryRepository < TaskRepositoryPort
   end
 
   def update(task)
-    # no hace falta hacer nada porque el objeto ya está en memoria
+    # Nothing to do here, since the task is already in memory
   end
 end

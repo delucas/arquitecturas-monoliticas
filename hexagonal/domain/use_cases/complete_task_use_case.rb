@@ -1,16 +1,16 @@
 class CompleteTaskUseCase
-  def initialize(repo, output)
-    @repo = repo
+  def initialize(task_repository, output)
+    @task_repository = task_repository
     @output = output
   end
 
   def call(task_id)
-    task = @repo.get(task_id)
+    task = @task_repository.get(task_id)
     if task.nil?
       @output.display_message("La tarea no existe.")
     else
       task.complete
-      @repo.update(task)
+      @task_repository.update(task)
       @output.display_message("Tarea completada.")
     end
   end

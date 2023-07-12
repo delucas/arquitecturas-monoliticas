@@ -1,4 +1,4 @@
-# µ-todo con arquitecturas monolíticas
+# µ-TODO con arquitecturas monolíticas
 
 Este repositorio tiene como objetivo ...
 

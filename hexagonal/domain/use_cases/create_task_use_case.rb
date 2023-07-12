@@ -1,12 +1,12 @@
 class CreateTaskUseCase
-  def initialize(repo, output)
-    @repo = repo
+  def initialize(task_repository, output)
+    @task_repository = task_repository
     @output = output
   end
 
   def call(description)
     task = Task.new(description)
-    @repo.create(task)
+    @task_repository.create(task)
     @output.display_message("Tarea agregada exitosamente.")
   end
 end

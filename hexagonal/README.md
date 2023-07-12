@@ -1,4 +1,4 @@
-# µ-todo con arquitectura hexagonal
+# µ-TODO con arquitectura hexagonal
 Se ilustra en este ejemplo la arquitectura hexagonal.
 
 ## Componentes
