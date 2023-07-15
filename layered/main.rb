@@ -1,5 +1,3 @@
-# Archivo: main.rb
-
 require_relative 'repository/in_memory_task_repository'
 require_relative 'services/default_task_service'
 require_relative 'user_interface/console_user_interface'

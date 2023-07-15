@@ -1,4 +1,3 @@
-# Archivo: main.rb
 require_relative 'infrastructure/repository/in_memory_task_repository'
 
 require_relative 'application/use_cases/list_tasks_use_case'

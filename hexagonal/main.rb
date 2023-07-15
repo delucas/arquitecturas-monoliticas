@@ -1,4 +1,3 @@
-# Archivo: main.rb
 require_relative 'domain/model/task'
 require_relative 'domain/ports/input_port'
 require_relative 'domain/ports/output_port'
