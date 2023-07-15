@@ -1,4 +1,4 @@
-require_relative 'task_repository'
+require_relative '../../core/services/task_repository'
 
 class InMemoryTaskRepository < TaskRepository
   def initialize
