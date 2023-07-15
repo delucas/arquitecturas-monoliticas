@@ -1,4 +1,4 @@
-require_relative 'model/task'
+require_relative 'domain/task'
 
 def get_command
   print "Ingrese un comando ([a]gregar, [c]ompletar, [s]alir): "
