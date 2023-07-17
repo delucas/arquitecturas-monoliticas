@@ -1,5 +1,5 @@
-require_relative '../user_interface/task_service'
-require_relative '../domain/task'
+require_relative '../01_user_interface/task_service'
+require_relative '../A0_domain/task'
 
 class DefaultTaskService < TaskService
   def initialize(task_repository)

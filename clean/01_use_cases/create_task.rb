@@ -1,3 +1,5 @@
+require_relative '../00_entities/task'
+
 class CreateTask
   Request = Struct.new(:description)
   Response = Struct.new(:success?, :errors)
@@ -7,7 +9,8 @@ class CreateTask
   end
 
   def call(request)
-    @task_repository.create(request.to_h)
+    task = Task.new(request.description)
+    @task_repository.create(task)
     Response.new(true, [])
   end
 end

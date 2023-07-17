@@ -1,4 +1,4 @@
-require_relative '../../domain/ports/task_repository_port'
+require_relative '../../core/ports/task_repository_port'
 
 class InMemoryTaskRepository < TaskRepositoryPort
   def initialize

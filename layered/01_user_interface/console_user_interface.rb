@@ -1,4 +1,4 @@
-require_relative '../application/user_interface'
+require_relative '../00_application/user_interface'
 
 class ConsoleUserInterface < UserInterface
 

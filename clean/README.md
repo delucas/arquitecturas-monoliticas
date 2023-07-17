@@ -6,5 +6,7 @@ Se ilustra en este ejemplo la arquitectura clean.
 - use_cases
   - interfaces
 - interface_adapters
+  - gateways
+  - presenters
 - external_interfaces
 - application

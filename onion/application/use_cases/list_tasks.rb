@@ -1,12 +1,11 @@
-class ListTasksUseCase
-  def initialize(task_repository, output)
+class ListTasks
+  def initialize(task_repository)
     @task_repository = task_repository
-    @output = output
   end
 
   def call
     tasks = @task_repository.all
     tasks = tasks.sort_by { |task| task.completed ? 1 : 0 }
-    @output.display_tasks(tasks)
+    tasks
   end
 end

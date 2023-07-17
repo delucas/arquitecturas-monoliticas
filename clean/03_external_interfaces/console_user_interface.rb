@@ -1,3 +1,5 @@
+require_relative '../02_interface_adapters/presenters/task_presenter'
+
 class ConsoleUserInterface
   def initialize(tasks_controller)
     @tasks_controller = tasks_controller
@@ -14,8 +16,7 @@ class ConsoleUserInterface
       puts "No hay tareas."
     else
       response.tasks.each do |task|
-        status = task.completed ? "[X]" : "[ ]"
-        puts "#{status} #{task.id}: #{task.description}"
+        puts TaskPresenter.new(task)
       end
     end
   end

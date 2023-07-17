@@ -13,7 +13,7 @@ class CompleteTask
     end
       
     task.complete
-    @task_repository.update(task.id, task)
+    @task_repository.update(task)
     Response.new(true, [])
   end
 end

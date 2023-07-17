@@ -1,14 +1,14 @@
-class ConsoleInterface
-  def initialize(list_tasks_use_case, create_task_use_case, complete_task_use_case, exit_system_use_case)
-    @complete_task_use_case = complete_task_use_case
-    @create_task_use_case = create_task_use_case
-    @list_tasks_use_case = list_tasks_use_case
-    @exit_system_use_case = exit_system_use_case
+class ConsoleUserInterface
+  def initialize(list_tasks, create_task, complete_task, exit_system)
+    @complete_task = complete_task
+    @create_task = create_task
+    @list_tasks = list_tasks
+    @exit_system = exit_system
   end
 
   def run
     system("clear")
-    tasks = @list_tasks_use_case.call
+    tasks = @list_tasks.call
     display_tasks(tasks)
     puts "-"*20
     
@@ -36,14 +36,14 @@ private
   end
 
   def list_tasks
-    @list_tasks_use_case.call
+    @list_tasks.call
   end
 
   def create_task
     print "Ingrese la descripción de la tarea: "
     description = gets.chomp
     
-    success = @create_task_use_case.call(description)
+    success = @create_task.call(description)
 
     if success
       display_message("Tarea agregada exitosamente.")
@@ -56,7 +56,7 @@ private
     print "Ingrese el ID de la tarea a completar: "
     task_id = gets.chomp.to_i
     
-    success = @complete_task_use_case.call(task_id)
+    success = @complete_task.call(task_id)
     
     if success
       display_message("Tarea completada.")
@@ -66,7 +66,7 @@ private
   end
 
   def exit_system
-    @exit_system_use_case.call
+    @exit_system.call
     display_message("¡Hasta luego!")
   end
 

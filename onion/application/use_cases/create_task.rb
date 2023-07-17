@@ -1,12 +1,13 @@
-class CreateTaskUseCase
-  def initialize(task_repository, output)
+require_relative '../../core/domain/task'
+
+class CreateTask
+  def initialize(task_repository)
     @task_repository = task_repository
-    @output = output
   end
 
   def call(description)
     task = Task.new(description)
     @task_repository.create(task)
-    @output.display_message("Tarea agregada exitosamente.")
+    true
   end
 end

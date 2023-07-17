@@ -1,4 +1,4 @@
-class CompleteTaskUseCase
+class CompleteTask
   def initialize(task_repository)
     @task_repository = task_repository
   end

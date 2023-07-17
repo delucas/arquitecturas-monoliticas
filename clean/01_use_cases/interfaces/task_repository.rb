@@ -7,11 +7,11 @@ class TaskRepository
     raise NotImplementedError
   end
 
-  def create(attributes)
+  def create(task)
     raise NotImplementedError
   end
 
-  def update(attributes)
+  def update(task)
     raise NotImplementedError
   end
 end

@@ -1,4 +1,4 @@
-require_relative '../../domain/ports/output_port'
+require_relative '../../core/ports/output_port'
 
 class ConsoleOutput < OutputPort
   def display_message(message)

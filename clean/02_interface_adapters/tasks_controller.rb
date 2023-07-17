@@ -1,3 +1,5 @@
+require_relative '../01_use_cases/create_task'
+
 class TasksController
   Task = Struct.new(:id, :description, :completed)
   ListResponse = Struct.new(:size, :tasks)
@@ -20,7 +22,7 @@ class TasksController
   end
 
   def create_task(params)
-    response = @create_task.call(params)
+    response = @create_task.call(CreateTask::Request.new(params[:description]))
     CreateResponse.new(response.success?, response.errors)
   end
 

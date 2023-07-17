@@ -1,5 +1,4 @@
-require_relative '../../00_entities/task'
-require_relative '../../01_use_cases/interfaces/task_repository'
+require_relative '../01_use_cases/interfaces/task_repository'
 
 class InMemoryTaskRepository < TaskRepository
   def initialize
@@ -7,8 +6,7 @@ class InMemoryTaskRepository < TaskRepository
     @next_id = 1
   end
 
-  def create(attributes)
-    task = Task.new(attributes[:description])
+  def create(task)
     task.id = @next_id
     @tasks << task
     @next_id += 1
@@ -22,7 +20,7 @@ class InMemoryTaskRepository < TaskRepository
     @tasks.find { |task| task.id == task_id }
   end
 
-  def update(task_id, attributes)
+  def update(task)
     # Nothing to do here, since the task is already in memory
   end
 end

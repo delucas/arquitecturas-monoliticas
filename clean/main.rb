@@ -1,9 +1,9 @@
 require_relative '04_application/application'
 
 require_relative '03_external_interfaces/console_user_interface'
+require_relative '03_external_interfaces/in_memory_task_repository'
 
 require_relative '02_interface_adapters/tasks_controller'
-require_relative '02_interface_adapters/gateways/in_memory_task_repository'
 
 require_relative '01_use_cases/list_tasks'
 require_relative '01_use_cases/create_task'

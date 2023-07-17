@@ -1,4 +1,4 @@
-class ExitSystemUseCase
+class ExitSystem
   def initialize(output)
     @output = output
   end
