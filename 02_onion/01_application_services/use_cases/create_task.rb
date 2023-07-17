@@ -1,4 +1,4 @@
-require_relative '../../core/domain/task'
+require_relative '../../00_core/domain/task'
 
 class CreateTask
   def initialize(task_repository)

@@ -2,10 +2,15 @@
 Se ilustra en este ejemplo la arquitectura hexagonal.
 
 ## Componentes
-- domain
-  - model
+- application
+- core
+  - domain
   - ports
   - use_cases
 - infrastructure
   - adapters
   - repositories
+
+## Diagrama
+
+![](hexagonal_architecture.png)

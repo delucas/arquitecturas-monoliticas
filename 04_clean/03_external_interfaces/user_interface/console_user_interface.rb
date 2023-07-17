@@ -1,4 +1,4 @@
-require_relative '../02_interface_adapters/presenters/task_presenter'
+require_relative '../../02_interface_adapters/presenters/task_presenter'
 
 class ConsoleUserInterface
   def initialize(tasks_controller)
@@ -48,7 +48,12 @@ class ConsoleUserInterface
   end
 
   def exit_system
-    display_message("¡Hasta luego!")
+    response = @tasks_controller.exit_system
+    if response.success
+      display_message("¡Hasta luego!")
+    else
+      display_errors(response.errors)
+    end
   end
 
   def display_message(message)

@@ -1,4 +1,4 @@
-require_relative '../01_use_cases/create_task'
+require_relative '../../01_use_cases/create_task'
 
 class TasksController
   Task = Struct.new(:id, :description, :completed)
@@ -6,11 +6,13 @@ class TasksController
   
   CreateResponse = Struct.new(:success, :errors)
   CompleteResponse = Struct.new(:success, :errors)
+  ExitResponse = Struct.new(:success, :errors)
 
-  def initialize(list_tasks, create_task, complete_task)
+  def initialize(list_tasks, create_task, complete_task, exit_system)
     @list_tasks = list_tasks
     @create_task = create_task
     @complete_task = complete_task
+    @exit_system = exit_system
   end
 
   def list_tasks
@@ -29,5 +31,10 @@ class TasksController
   def complete_task(params)
     response = @complete_task.call(params)
     CompleteResponse.new(response.success?, response.errors)
+  end
+
+  def exit_system
+    response = @exit_system.call
+    ExitResponse.new(response.success?, [])
   end
 end
